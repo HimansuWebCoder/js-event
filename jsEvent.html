@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event learning 2</title>
+    <style>
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        max-width: 200px;
+        height: 200px;
+        padding: 20px;
+        margin: auto;
+        background-color: blue;
+      }
+
+      .item1 {
+        width: 100%;
+        height: 100px;
+        background-color: red;
+        margin: 5px;
+      }
+
+      .item2 {
+        width: 100%;
+        height: 100px;
+        background-color: yellow;
+      }
+
+      .container {
+        border: 3px solid blue;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="item1"></div>
+        <div class="item2"></div>
+      </div>
+    </div>
+
+    <script>
+      const container = document.querySelector(".container");
+      const box = document.querySelector(".box");
+      const item1 = document.querySelector(".item1");
+      const item2 = document.querySelector(".item2");
+
+      container.addEventListener("click", (e) => {
+        const style = e.target.classList; // id, classList, tagName; parentNode; childNode etc..;
+        // console.log(style);
+        // console.log(style == "container");
+
+        if (style == "container") {
+          document.body.style.backgroundColor = "black";
+          console.log(style == "container");
+        } else if (style == "box") {
+          document.body.style.backgroundColor = "yellow";
+          console.log(style == "box");
+        } else if (style == "item1") {
+          document.body.style.backgroundColor = "red";
+          console.log(style == "item1");
+        } else if (style == "item2") {
+          document.body.style.backgroundColor = "blue";
+          console.log(style == "item2");
+        } else {
+          document.body.style.backgroundColor = "white";
+          console.log(style == " ");
+        }
+      });
+    </script>
+  </body>
+</html>
